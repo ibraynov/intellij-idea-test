@@ -7,6 +7,8 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -18,16 +20,19 @@ public class ebayLinks {
 
     private WebDriver driver;
 
+
     @Before
     public void setUp(){
         driver = new FirefoxDriver();
         driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
         driver.manage().window().maximize();
         driver.get("https://ebay.com");
+
     }
 
     @Test
     public void siteLinksCount(){
+
         //Number of all links in the frontpage
         Integer allLinksCount = driver.findElements(By.tagName("a")).size();
         System.out.println("The number of all links in the page is: " + allLinksCount);
