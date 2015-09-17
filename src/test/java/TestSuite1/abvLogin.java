@@ -1,13 +1,13 @@
+package TestSuite1;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.util.List;
@@ -16,12 +16,10 @@ import java.util.concurrent.TimeUnit;
 
 import static org.junit.Assert.assertEquals;
 
-public class TestSuite1 {
+public class abvLogin {
 
     private WebDriver driver;
     private WebDriverWait driverWait;
-    private Select dropDownSelector;
-    private Alert popup;
     private String username = "dev_provers@abv.bg";
     private String password = "provers2015";
 
@@ -123,7 +121,6 @@ public class TestSuite1 {
         String taskTitleConfirm = taskLists.get(0).getText();
 
         assertEquals(title, taskTitleConfirm );
-
     }
 
     @After
